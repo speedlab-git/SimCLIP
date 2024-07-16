@@ -10,11 +10,15 @@
 
 ## Contents
 
-1. [Installation](#installation-guides)
-2. [Dataset](#dataset)
-3. [Adversarial Training](#adversarial-training)
-4. [Models](#models)
-5. [Evaluation](#evaluation)
+### [Installation](#installation)
+
+### [Dataset](#dataset)
+
+### [Adversarial Training](#adversarial-training)
+
+### [Models](#models)
+
+### [Evaluation](#evaluation)
 
 ## Installation
 
@@ -76,7 +80,7 @@ In this repository, we provide scripts for running adversarial training with `FA
 python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
 ```
 
-or use bash script and make sure you are in the `SimCLIP` folder
+or execute the bash script(you can specify the training parameters inside). Make sure you are in the `SimCLIP` folder
 
 ```
 ./bash/of_eval_9B_coco.sh
