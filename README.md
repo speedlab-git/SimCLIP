@@ -10,15 +10,11 @@
 
 ## Contents
 
-### [Installation](#installation)
-
-### [Dataset](#dataset)
-
-### [Adversarial Training](#adversarial-training)
-
-### [Models](#models)
-
-### [Evaluation](#evaluation)
+- [Installation](#installation)
+- [Dataset](#dataset)
+- [Adversarial Training](#adversarial-training)
+- [Models](#models)
+- [Evaluation](#evaluation)
 
 ## Installation
 
@@ -77,7 +73,7 @@ In this repository, we provide scripts for running adversarial training with `FA
 ### 1. Sim-CLIP<sup>4</sup>
 
 ```
-python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
+python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root "imagenet root folder" --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
 ```
 
 or execute the bash script(you can specify the training parameters inside). Make sure you are in the `SimCLIP` folder
@@ -85,8 +81,6 @@ or execute the bash script(you can specify the training parameters inside). Make
 ```
 ./bash/of_eval_9B_coco.sh
 ```
-
-### **Note:** Set `--imagenet_root` with the path of the downloaded ImageNet dataset root.
 
 ### 2. FARE<sup>4</sup>
 
@@ -99,3 +93,8 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 ```
 python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
 ```
+
+### **Note:**
+
+- Set `--imagenet_root` with the path of the downloaded ImageNet dataset root. Set `eps 2` to obtain SimCLIP<sup>2</sup>, FARE<sup>2</sup> and TeCoA<sup>2</sup> models.
+- We recommend a dual GPU setup with total 32 GB VRAM equipped GPU. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`.
