@@ -6,7 +6,7 @@
 
 ## Contents
 
-1. [Install](#installation-guides)
+1. [Installation](#installation-guides)
 2. [Dataset](#dataset)
 3. [Adversarial Training](#adversarial-training)
 4. [Models](#models)
