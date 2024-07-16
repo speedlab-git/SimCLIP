@@ -14,7 +14,14 @@
 
 ## Installation
 
-We recommend you to use [Anaconda](https://www.anaconda.com/products/distribution) to maintain installed packages and the environment. We use **Python 3.11** for our training and evaluation. Install required packages using the following commands:
+1. Clone this repository and navigate to the SimCLIP folder:
+
+```
+git clone https://github.com/speedlab-git/SimCLIP.git
+cd SimCLIP
+```
+
+2. We recommend you to use [Anaconda](https://www.anaconda.com/products/distribution) to maintain installed packages and the environment. We use **Python 3.11** for our training and evaluation. Install required packages using the following commands:
 
 ```
 conda create -n simclip python=3.11 -y
