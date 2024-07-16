@@ -2,8 +2,10 @@
 
 ## Abstract
 
-![system architecture] (./utils/arch.png)
-
+<!-- ![system architecture](./utils/arch.png) -->
+<p align="center">
+  <img src="./utils/arch.png" width="950" alt="accessibility text">
+</p>
 <p align="justify">Vision-language models (VLMs) have achieved remarkable performance on multimodal tasks but remain vulnerable to adversarial attacks targeting the vision component. We propose Sim-CLIP, an unsupervised adversarial fine-tuning method that enhances the robustness of the widely-used CLIP vision encoder against such attacks. By employing a Siamese architecture with cosine similarity loss, Sim-CLIP learns semantically meaningful and attack-resilient visual representations without requiring large batch sizes or momentum encoders. We demonstrate that VLMs enhanced with Sim-CLIP's fine-tuned CLIP encoder exhibit significantly enhanced robustness against adversarial attacks, while maintaining high clean accuracy across diverse downstream tasks. Notably, our approach does not require any additional training or fine-tuning of the VLM itself. Simply replacing the original vision encoder with our fine-tuned encoder is sufficient to provide robustness against adversarial attacks. This work underscores the criticality of reinforcing foundational models like CLIP to safeguard the reliability of downstream VLM applications.</p>
 
 ## Contents
@@ -36,13 +38,14 @@ pip install -r requirements.txt
 ### Adversarial training dataset
 
 We adversarially pre-train CLIP on the ImageNet dataset. Please download the ImageNet dataset from [here](https://www.image-net.org/download.php) or use the following command:
+If you are using windows, please use `linux subsystem (WSL)`
 
 ```
 wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar
 wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar
 ```
 
-Download the ImageNet dataset and extract the training and validation data using the provided script in `bash` folder:
+After downloading the ImageNet dataset, extract the training and validation data using the provided script in `bash` folder:
 
 ```
 ./bash/imagenet/extract_ILSVRC.sh
@@ -61,4 +64,26 @@ For image captioning tasks, we use the COCO and Flickr30k datasets, which are wi
 | Flickr30k    | [Download Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) |
 | VizWiz       | [Download VizWiz](https://vizwiz.org/tasks-and-datasets/)                             |
 
-#Adversarial training
+<!-- https://huggingface.co/datasets/openflamingo/eval_benchmark/tree/main -->
+
+## Adversarial training
+
+In this repository we provide scripts for running adversarial training with FARE and TeCoA alongside with our proposed method Sim-CLIP.
+
+### 1. Sim-CLIP
+
+```
+python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
+```
+
+### 2. FARE
+
+```
+python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
+```
+
+### 3. TeCoA
+
+```
+python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir /c/CodesSpring24/RobustVLM/cocoadv --experiment_name SimCLIP4 --log_freq 10
+```
