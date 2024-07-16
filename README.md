@@ -40,8 +40,21 @@ wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar
 wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar
 ```
 
-1. Download the ImageNet dataset and extract the training and validation data using the provided script:
+Download the ImageNet dataset and extract the training and validation data using the provided script in `bash` folder:
 
 ```
 ./bash/imagenet/extract_ILSVRC.sh
 ```
+
+### Evaluation dataset
+
+### Evaluation dataset
+
++--------------+---------------------------------------------------------------------------------------+
+| Dataset Name | Download Link |
++--------------+---------------------------------------------------------------------------------------+
+| OKVQA | [Download OKVQA](https://okvqa.allenai.org/download.html) |
+| COCO | [Download COCO](https://cocodataset.org/#download) |
+| Flickr30k | [Download Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) |
+| VizWiz | [Download VizWiz](https://vizwiz.org/tasks-and-datasets/) |
++--------------+---------------------------------------------------------------------------------------+
