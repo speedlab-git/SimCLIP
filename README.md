@@ -29,4 +29,19 @@ conda activate simclip
 pip install -r requirements.txt
 ```
 
-### Prerequisites
+## Dataset
+
+### Adversarial training dataset
+
+We adversarially pre-train CLIP on the ImageNet dataset. Please download the ImageNet dataset from [here](https://www.image-net.org/download.php) or use the following command:
+
+```
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar
+```
+
+1. Download the ImageNet dataset and extract the training and validation data using the provided script:
+
+```
+./bash/imagenet/extract_ILSVRC.sh
+```
