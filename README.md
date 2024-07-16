@@ -30,25 +30,3 @@ pip install -r requirements.txt
 ```
 
 ### Prerequisites
-
-- List of prerequisites
-
-### Installation Steps
-
-1. Step 1
-2. Step 2
-3. Step 3
-
-## Results
-
-### Experiment 1
-
-- Description of Experiment 1 results
-
-### Experiment 2
-
-- Description of Experiment 2 results
-
-```
-
-```
