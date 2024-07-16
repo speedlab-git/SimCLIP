@@ -40,7 +40,7 @@ parser.add_argument('--optimizer_state', type=str, default='', help='Optimizer s
 parser.add_argument('--steps', type=int, default=20000, help='Number of training steps')
 parser.add_argument('--warmup', type=int, default=14000, help='Warmup steps')
 parser.add_argument('--batch_size', type=int, default=256)
-parser.add_argument('--loss', type=str, default='l2', help='ce, l2')
+parser.add_argument('--loss', type=str, default='cos', help='cosine similarity loss')
 parser.add_argument('--loss_clean', type=str, default='none', help='ce, l2')
 parser.add_argument('--clean_weight', type=float, default=0., help='Weight for clean loss')
 parser.add_argument('--trades', type=str2bool, default=False, help='Use TRADES')
@@ -378,11 +378,11 @@ def train_one_epoch(
             embedding_clean_no_grad = embedding_clean.detach().clone()
             embedding_orig.cpu()
 
-        loss = compute_loss(
-            loss_str=args.loss, embedding=embedding_adv, targets=targets,
-            embedding_orig=embedding_orig if not args.trades else embedding_clean_no_grad,
-            logit_scale=100., embedding_text_labels_norm=embedding_text_labels_norm
-            )
+        # loss = compute_loss(
+        #     loss_str=args.loss, embedding=embedding_adv, targets=targets,
+        #     embedding_orig=embedding_orig if not args.trades else embedding_clean_no_grad,
+        #     logit_scale=100., embedding_text_labels_norm=embedding_text_labels_norm
+        #     )
         
         #Main Loss minimization Process =================================================
         # loss_total = args.clean_weight * loss_clean + (1 - args.clean_weight) * loss
@@ -391,7 +391,8 @@ def train_one_epoch(
 
         loss1 = forward(embedding_adv,embedding_orig)
         loss2 = forward(embedding_orig,embedding_adv)
-        loss_total=  loss1/2 +loss2/2        
+        loss_total=  loss1/2 +loss2/2       
+        loss=loss_total
         print("total unsupervised cosine loss== ",loss_total)
         loss_total.backward()
         optimizer.step()
