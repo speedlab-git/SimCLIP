@@ -48,12 +48,13 @@ Download the ImageNet dataset and extract the training and validation data using
 
 ### Evaluation dataset
 
-### Evaluation dataset
+For evaluating the robustness and performance of our fine-tuned CLIP vision encoder, we utilize a diverse set of datasets tailored for different tasks. For Visual Question Answering (VQA)
+tasks, we employ the OKVQA and VizWiz datasets, which provide challenging benchmarks for assessing the model's ability to understand and answer questions based on visual content.
+For image captioning tasks, we use the COCO and Flickr30k datasets, which are widely recognized for their comprehensive annotations and variety of images.
 
-| Dataset Name | Download Link                                                                        |
-|--------------|--------------------------------------------------------------------------------------|
+| Dataset Name | Download Link                                                                         |
+| ------------ | ------------------------------------------------------------------------------------- |
 | OKVQA        | [Download OKVQA](https://okvqa.allenai.org/download.html)                             |
 | COCO         | [Download COCO](https://cocodataset.org/#download)                                    |
 | Flickr30k    | [Download Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) |
 | VizWiz       | [Download VizWiz](https://vizwiz.org/tasks-and-datasets/)                             |
-
