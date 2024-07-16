@@ -9,9 +9,9 @@ python -m vlm_eval.run_evaluation_of \
 --batch_size 1 \
 --results_file res9B \
 --model open_flamingo \
---out_base_path /c/CodesSpring24/RobustVLM/cocoadv \
+--out_base_path /c/CodesSpring24/SimCLIP/cocoadv \
 --vision_encoder_path ViT-L-14 \
---checkpoint_path /c/CodesSpring24/RobustVLM/flamingocheckpoint.pt \
+--checkpoint_path /c/CodesSpring24/SimCLIP/flamingocheckpoint.pt \
 --lm_path anas-awadalla/mpt-7b \
 --lm_tokenizer_path anas-awadalla/mpt-7b \
 --precision float16 \

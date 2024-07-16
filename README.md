@@ -87,14 +87,17 @@ or execute the bash script(you can specify the training parameters inside). Make
 ```
 python -m train.adversarial_training_clip --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss l2 --opt adamw --lr 1e-5 --wd 1e-4 --attack pgd --inner_loss l2 --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb False --output_dir "output directory" --experiment_name FARE4 --log_freq 10
 ```
+
 ```
 ./bash/training/fare_train.sh
 ```
+
 ### 3. TeCoA<sup>4</sup>
 
 ```
 python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss ce --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss ce --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir "output directory" --experiment_name TeCOA4 --log_freq 10
 ```
+
 ```
 ./bash/training/tecoa_train.sh
 ```
@@ -105,21 +108,29 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 - We recommend a dual GPU setup with a total of 32 GB VRAM. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`
 - Modify the `output_dir` parameter to specify the directory to save the model checkpoints
 
-
 ## Evaluation
 
-## CLIP Zero-shot Classification
+## Zero-shot Classification
+
 Acquire the classification dataset by visiting the Huggingface CLIP_benchmark repository at [Huggingface CLIP_benchmark](https://huggingface.co/clip-benchmark). Configure the models for evaluation in `CLIP_benchmark/benchmark/models.txt` and specify the datasets in `CLIP_benchmark/benchmark/datasets.txt`. Then execute
+
 ```
 cd CLIP_benchmark
 ./bash/run_benchmark_adv.sh
 ```
-## Down-stream tasks evaluation 
+
+## Down-stream tasks evaluation
+
+Before proceeding with Down-stream tasks evaluations, download validation annotations set from [Huggingface openflamingo repository](https://huggingface.co/datasets/openflamingo/eval_benchmark/tree/main)
 
 ### Captioning Tasks
 
+-OpenFlamingo
 
-### Visual Question Answering Tasks 
+Download the OpenFlamingo 9B [model](https://huggingface.co/openflamingo/OpenFlamingo-9B-vitl-mpt7b/tree/main), supply paths in /bash/of_eval_9B_coco.sh. Set `--vision_encoder_pretrained` to `openai` or supply path to fine-tuned CLIP model checkpoint (e.g., Sim-CLIP). Provide path to downloaded annotation set and run
 
+```
+./bash/of_eval_9B_coco.sh
+```
 
-
+### Visual Question Answering Tasks

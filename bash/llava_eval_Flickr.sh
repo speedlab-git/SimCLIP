@@ -11,12 +11,12 @@ python -m vlm_eval.run_evaluation \
 --model llava \
 --temperature 0.0 \
 --num_beams 1 \
---out_base_path /c/CodesSpring24/RobustVLM/cocoadv \
+--out_base_path /c/CodesSpring24/SimCLIP/cocoadv \
 --model_path liuhaotian/llava-v1.5-7b \
 --flickr_image_dir_path /c/CodesSpring24/Data/flickr30k_images/flickr30k_images \
---flickr_karpathy_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k.json \
---flickr_annotations_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
---vision_encoder_pretrained /c/CodesSpring24/RobustVLM/cocoadv/ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_bVISu/checkpoints/fallback_38600.pt \
+--flickr_karpathy_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k.json \
+--flickr_annotations_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
+--vision_encoder_pretrained /c/CodesSpring24/SimCLIP/cocoadv/ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_bVISu/checkpoints/fallback_38600.pt \
 
 
 python -m vlm_eval.run_evaluation \
@@ -30,12 +30,12 @@ python -m vlm_eval.run_evaluation \
 --model llava \
 --temperature 0.0 \
 --num_beams 1 \
---out_base_path /c/CodesSpring24/RobustVLM/cocoadv \
+--out_base_path /c/CodesSpring24/SimCLIP/cocoadv \
 --model_path liuhaotian/llava-v1.5-7b \
 --flickr_image_dir_path /c/CodesSpring24/Data/flickr30k_images/flickr30k_images \
---flickr_karpathy_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k.json \
---flickr_annotations_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
---vision_encoder_pretrained /c/CodesSpring24/RobustVLM/cocoadv/fare_eps_4.pt \
+--flickr_karpathy_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k.json \
+--flickr_annotations_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
+--vision_encoder_pretrained /c/CodesSpring24/SimCLIP/cocoadv/fare_eps_4.pt \
 
 
 python -m vlm_eval.run_evaluation \
@@ -49,11 +49,11 @@ python -m vlm_eval.run_evaluation \
 --model llava \
 --temperature 0.0 \
 --num_beams 1 \
---out_base_path /c/CodesSpring24/RobustVLM/cocoadv \
+--out_base_path /c/CodesSpring24/SimCLIP/cocoadv \
 --model_path liuhaotian/llava-v1.5-7b \
 --flickr_image_dir_path /c/CodesSpring24/Data/flickr30k_images/flickr30k_images \
---flickr_karpathy_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k.json \
---flickr_annotations_json_path /c/CodesSpring24/RobustVLM/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
---vision_encoder_pretrained /c/CodesSpring24/RobustVLM/cocoadv/tecoa_eps_4.pt \
+--flickr_karpathy_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k.json \
+--flickr_annotations_json_path /c/CodesSpring24/SimCLIP/eval_benchmark/flickr30k/dataset_flickr30k_coco_style.json \
+--vision_encoder_pretrained /c/CodesSpring24/SimCLIP/cocoadv/tecoa_eps_4.pt \
 
 
