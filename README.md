@@ -114,3 +114,12 @@ Acquire the classification dataset by visiting the Huggingface CLIP_benchmark re
 cd CLIP_benchmark
 ./bash/run_benchmark_adv.sh
 ```
+## Down-stream tasks evaluation 
+
+### Captioning Tasks
+
+
+### Visual Question Answering Tasks 
+
+
+
