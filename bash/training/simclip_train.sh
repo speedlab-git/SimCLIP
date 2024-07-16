@@ -13,7 +13,7 @@ python -m train.adversarial_training_clip_up \
 --lr 1e-3 \
 --wd 1e-5 \
 --attack pgd \
---inner_loss l2 \
+--attack_loss l2 \
 --norm linf \
 --eps 4 \
 --iterations_adv 10 \
