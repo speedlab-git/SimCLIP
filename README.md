@@ -79,7 +79,7 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 or execute the bash script(you can specify the training parameters inside). Make sure you are in the `SimCLIP` folder
 
 ```
-./bash/of_eval_9B_coco.sh
+./bash/train_adv_up.sh
 ```
 
 ### 2. FARE<sup>4</sup>
@@ -96,5 +96,5 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 
 ### **Note:**
 
-- Set `--imagenet_root` with the path of the downloaded ImageNet dataset root. Set `eps 2` to obtain SimCLIP<sup>2</sup>, FARE<sup>2</sup> and TeCoA<sup>2</sup> models.
-- We recommend a dual GPU setup with total 32 GB VRAM equipped GPU. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`.
+- Set `--imagenet_root` with the path of your downloaded ImageNet dataset. Set `eps 2` to obtain SimCLIP<sup>2</sup>, FARE<sup>2</sup> and TeCoA<sup>2</sup> models.
+- We recommend a dual GPU setup with a total of 32 GB VRAM. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`.
