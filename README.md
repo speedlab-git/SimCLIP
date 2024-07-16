@@ -104,3 +104,13 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 - Set `--imagenet_root` with the path of your downloaded ImageNet dataset. Set `eps 2` to obtain Sim-CLIP<sup>2</sup>, FARE<sup>2</sup> and TeCoA<sup>2</sup> models
 - We recommend a dual GPU setup with a total of 32 GB VRAM. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`
 - Modify the `output_dir` parameter to specify the directory to save the model checkpoints
+
+
+## Evaluation
+
+## CLIP Zero-shot Classification
+Acquire the classification dataset by visiting the Huggingface CLIP_benchmark repository at [Huggingface CLIP_benchmark](https://huggingface.co/clip-benchmark). Configure the models for evaluation in `CLIP_benchmark/benchmark/models.txt` and specify the datasets in `CLIP_benchmark/benchmark/datasets.txt`. Then execute
+```
+cd CLIP_benchmark
+./bash/run_benchmark_adv.sh
+```
