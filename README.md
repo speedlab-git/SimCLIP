@@ -50,11 +50,10 @@ Download the ImageNet dataset and extract the training and validation data using
 
 ### Evaluation dataset
 
-+----------------+-------------------------------------------------------------------------------------+
-| Dataset Name   | Download Link                                                                         |
-+----------------+-------------------------------------------------------------------------------------+
-| OKVQA          | [Download OKVQA](https://okvqa.allenai.org/download.html)                             |
-| COCO           | [Download COCO](https://cocodataset.org/#download)                                    |
-| Flickr30k      | [Download Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) |
-| VizWiz         | [Download VizWiz](https://vizwiz.org/tasks-and-datasets/)                             |
-+----------------+-------------------------------------------------------------------------------------+
+| Dataset Name | Download Link                                                                        |
+|--------------|--------------------------------------------------------------------------------------|
+| OKVQA        | [Download OKVQA](https://okvqa.allenai.org/download.html)                             |
+| COCO         | [Download COCO](https://cocodataset.org/#download)                                    |
+| Flickr30k    | [Download Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) |
+| VizWiz       | [Download VizWiz](https://vizwiz.org/tasks-and-datasets/)                             |
+
