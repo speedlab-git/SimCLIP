@@ -7,7 +7,7 @@ python -m train.adversarial_training_clip \
 --output_normalize False \
 --steps 10000 \
 --warmup 1400 \
---batch_size 32 \
+--batch_size 64 \
 --loss l2 \
 --opt adamw \
 --lr 1e-5 \
@@ -19,6 +19,6 @@ python -m train.adversarial_training_clip \
 --iterations_adv 10 \
 --stepsize_adv 1 \
 --wandb False \
---output_dir /path/to/out/dir \
+--output_dir "output directory" \
 --experiment_name FARE4 \
 --log_freq 10 \

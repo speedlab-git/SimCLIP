@@ -19,7 +19,7 @@ python -m train.adversarial_training_simclip \
 --iterations_adv 10 \
 --stepsize_adv 1 \
 --wandb True \
---output_dir /c/CodesSpring24/RobustVLM/cocoadv \
+--output_dir "output directory" \
 --experiment_name SimCLIP4 \
 --log_freq 10 \
 
