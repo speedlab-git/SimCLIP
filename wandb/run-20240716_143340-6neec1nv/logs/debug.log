@@ -1,0 +1,29 @@
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Current SDK version is 0.15.2
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Configure stats pid to 50152
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Loading settings from C:\Users\siu856542507\.config\wandb\settings
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Loading settings from C:\CodesSpring24\SimCLIP\wandb\settings
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_service_wait': '300'}
+2024-07-16 14:33:40,160 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-07-16 14:33:40,161 WARNING MainThread:50152 [wandb_setup.py:_flush():76] Could not find program at -m train.adversarial_training_clip_up
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m train.adversarial_training_clip_up'}
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:_log_setup():507] Logging user logs to C:\CodesSpring24\SimCLIP\wandb\run-20240716_143340-6neec1nv\logs\debug.log
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:_log_setup():508] Logging internal logs to C:\CodesSpring24\SimCLIP\wandb\run-20240716_143340-6neec1nv\logs\debug-internal.log
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:init():547] calling init triggers
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'clip_model_name': 'ViT-L-14', 'pretrained': 'openai', 'dataset': 'imagenet', 'template': 'std', 'imagenet_root': 'C:/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC', 'output_normalize': False, 'start_step': 0, 'optimizer_state': '', 'steps': 10000, 'warmup': 1400, 'batch_size': 64, 'loss': 'l2', 'loss_clean': 'none', 'clean_weight': 0.0, 'trades': False, 'opt': 'sgd', 'momentum_sgd': 0.9, 'lr': 0.001, 'wd': 1e-05, 'attack': 'pgd', 'inner_loss': 'l2', 'norm': 'linf', 'eps': 0.01568627450980392, 'iterations_adv': 10, 'stepsize_adv': 0.00392156862745098, 'wandb': True, 'experiment_name': 'SimCLIP4', 'overwrite': False, 'log_freq': 10, 'eval_freq': 50, 'output_dir': 'C:/CodesSpring24/RobustVLM/cocoadv\\ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW', 'save_checkpoints': True, 'devices': '', 'finetuned_model_name': 'ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW'}
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:init():596] starting backend
+2024-07-16 14:33:40,161 INFO    MainThread:50152 [wandb_init.py:init():600] setting up manager
+2024-07-16 14:33:40,167 INFO    MainThread:50152 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2024-07-16 14:33:40,170 INFO    MainThread:50152 [wandb_init.py:init():606] backend started and connected
+2024-07-16 14:33:40,172 INFO    MainThread:50152 [wandb_init.py:init():700] updated telemetry
+2024-07-16 14:33:40,201 INFO    MainThread:50152 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2024-07-16 14:33:40,469 INFO    MainThread:50152 [wandb_run.py:_on_init():2177] communicating current version
+2024-07-16 14:33:40,565 INFO    MainThread:50152 [wandb_run.py:_on_init():2186] got version response upgrade_message: "wandb version 0.17.4 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-07-16 14:33:40,565 INFO    MainThread:50152 [wandb_init.py:init():787] starting run threads in backend
+2024-07-16 14:33:47,027 INFO    MainThread:50152 [wandb_run.py:_console_start():2158] atexit reg
+2024-07-16 14:33:47,027 INFO    MainThread:50152 [wandb_run.py:_redirect():2013] redirect: 3
+2024-07-16 14:33:47,028 INFO    MainThread:50152 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2024-07-16 14:33:47,028 INFO    MainThread:50152 [wandb_run.py:_redirect():2103] Redirects installed.
+2024-07-16 14:33:47,028 INFO    MainThread:50152 [wandb_init.py:init():829] run started, returning control to user process
+2024-07-16 14:38:43,781 WARNING MsgRouterThr:50152 [router.py:message_loop():77] message_loop has been closed

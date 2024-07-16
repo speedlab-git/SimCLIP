@@ -5,7 +5,7 @@ python -m train.adversarial_training_clip \
 --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC \
 --template std \
 --output_normalize False \
---steps 20000 \
+--steps 10000 \
 --warmup 1400 \
 --batch_size 32 \
 --loss l2 \

@@ -1,0 +1,116 @@
+Arguments:
+--------------------
+clip_model_name: ViT-L-14
+pretrained: openai
+dataset: imagenet
+template: std
+imagenet_root: C:/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC
+output_normalize: False
+start_step: 0
+optimizer_state:
+steps: 10000
+warmup: 1400
+batch_size: 64
+loss: l2
+loss_clean: none
+clean_weight: 0.0
+trades: False
+opt: sgd
+momentum_sgd: 0.9
+lr: 0.001
+wd: 1e-05
+attack: pgd
+inner_loss: l2
+norm: linf
+eps: 0.01568627450980392
+iterations_adv: 10
+stepsize_adv: 0.00392156862745098
+wandb: True
+experiment_name: SimCLIP4
+overwrite: False
+log_freq: 10
+eval_freq: 50
+output_dir: C:/CodesSpring24/RobustVLM/cocoadv\ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW
+save_checkpoints: True
+devices:
+finetuned_model_name: ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW
+--------------------
+[preprocessor_without_normalize] Compose(
+    Resize(size=224, interpolation=bicubic, max_size=None, antialias=warn)
+    CenterCrop(size=(224, 224))
+    <function _convert_to_rgb at 0x000001BAD12DDBC0>
+    ToTensor()
+)
+[normalize] Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))
+template: This is a photo of a {}
+These are samples ['This is a photo of a tench', 'This is a photo of a goldfish', 'This is a photo of a great white shark', 'This is a photo of a tiger shark', 'This is a photo of a hammerhead shark', 'This is a photo of a electric ray', 'This is a photo of a stingray', 'This is a photo of a rooster', 'This is a photo of a hen', 'This is a photo of a ostrich']
+train for 0.4995504046358278 epochs
+TOTAL EPOCHS: 0.4995504046358278
+embedding tensor([[ 0.0466, -0.0027,  0.0090,  ...,  0.0492,  0.0049, -0.0079],
+        [ 0.0244,  0.0166,  0.0106,  ...,  0.0369, -0.0362, -0.0040],
+        [ 0.0304,  0.0134, -0.0182,  ...,  0.0365,  0.0234,  0.0287],
+        ...,
+        [ 0.0115,  0.0098,  0.0181,  ...,  0.0199,  0.0306,  0.0202],
+        [ 0.0787,  0.0171,  0.0104,  ...,  0.0212,  0.0653,  0.0290],
+        [-0.0355, -0.0223, -0.0038,  ...,  0.0354, -0.0291, -0.0269]],
+       device='cuda:0')
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1269, device='cuda:0', grad_fn=<AddBackward0>)
+C:\Users\siu856542507\AppData\Local\anaconda3\envs\RobustVLM\Lib\site-packages\torch\cuda\nccl.py:15: UserWarning: PyTorch is not compiled with NCCL support
+  warnings.warn('PyTorch is not compiled with NCCL support')
+[eval-acc] 75.00 [eval-racc] 0.00 [eval-cos-sim] 0.285
+[step] 1 [lr] 0.000001 [loss] 523.781616 [cos-sim] 0.127 [acc] 78.12 [racc] 7.81
+[epoch average time] 723.01 [this epoch remaining] 722.98 [total remaining] 361.18
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.0992, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1286, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1028, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.0863, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1340, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.0844, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1045, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1061, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1128, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1023, device='cuda:0', grad_fn=<AddBackward0>)
+[step] 11 [lr] 0.000009 [loss] 547.235474 [cos-sim] 0.102 [acc] 76.56 [racc] 9.38
+Still using this whereas it supposed to be a unsupervised emthod
+============================== 0.0
+total unsupervised cosine loss==  tensor(-0.1132, device='cuda:0', grad_fn=<AddBackward0>)
+Still using this whereas it supposed to be a unsupervised emthod
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\CodesSpring24\SimCLIP\train\adversarial_training_clip_up.py", line 598, in <module>
+    main(args)
+  File "C:\CodesSpring24\SimCLIP\train\adversarial_training_clip_up.py", line 240, in main
+    step_total = train_one_epoch(
+                 ^^^^^^^^^^^^^^^^
+  File "C:\CodesSpring24\SimCLIP\train\adversarial_training_clip_up.py", line 330, in train_one_epoch
+    data_adv = pgd(
+               ^^^^
+  File "C:\CodesSpring24\SimCLIP\train\pgd_train.py", line 44, in pgd
+    gradient = normalize_grad(gradient, p=norm)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\CodesSpring24\SimCLIP\vlm_eval\attacks\utils.py", line 19, in normalize_grad
+    def normalize_grad(grad, p):
+KeyboardInterrupt

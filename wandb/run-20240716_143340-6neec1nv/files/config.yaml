@@ -1,0 +1,139 @@
+wandb_version: 1
+
+clip_model_name:
+  desc: null
+  value: ViT-L-14
+pretrained:
+  desc: null
+  value: openai
+dataset:
+  desc: null
+  value: imagenet
+template:
+  desc: null
+  value: std
+imagenet_root:
+  desc: null
+  value: C:/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC
+output_normalize:
+  desc: null
+  value: false
+start_step:
+  desc: null
+  value: 0
+optimizer_state:
+  desc: null
+  value: ''
+steps:
+  desc: null
+  value: 10000
+warmup:
+  desc: null
+  value: 1400
+batch_size:
+  desc: null
+  value: 64
+loss:
+  desc: null
+  value: l2
+loss_clean:
+  desc: null
+  value: none
+clean_weight:
+  desc: null
+  value: 0.0
+trades:
+  desc: null
+  value: false
+opt:
+  desc: null
+  value: sgd
+momentum_sgd:
+  desc: null
+  value: 0.9
+lr:
+  desc: null
+  value: 0.001
+wd:
+  desc: null
+  value: 1.0e-05
+attack:
+  desc: null
+  value: pgd
+inner_loss:
+  desc: null
+  value: l2
+norm:
+  desc: null
+  value: linf
+eps:
+  desc: null
+  value: 0.01568627450980392
+iterations_adv:
+  desc: null
+  value: 10
+stepsize_adv:
+  desc: null
+  value: 0.00392156862745098
+wandb:
+  desc: null
+  value: true
+experiment_name:
+  desc: null
+  value: SimCLIP4
+overwrite:
+  desc: null
+  value: false
+log_freq:
+  desc: null
+  value: 10
+eval_freq:
+  desc: null
+  value: 50
+output_dir:
+  desc: null
+  value: C:/CodesSpring24/RobustVLM/cocoadv\ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW
+save_checkpoints:
+  desc: null
+  value: true
+devices:
+  desc: null
+  value: ''
+finetuned_model_name:
+  desc: null
+  value: ViT-L-14_openai_imagenet_l2_imagenet_SimCLIP4_XgojW
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.0
+    cli_version: 0.15.2
+    framework: huggingface
+    huggingface_version: 4.30.0.dev0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1721158420.170269
+    t:
+      1:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 63
+      2:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 63
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.11.0
+      5: 0.15.2
+      6: 4.30.0.dev0
+      8:
+      - 3
+      - 5

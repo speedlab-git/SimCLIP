@@ -1,4 +1,4 @@
-python -m train.adversarial_training_clip_up_aug \
+python -m train.adversarial_training_clip \
 --clip_model_name ViT-L-14 \
 --pretrained openai \
 --dataset imagenet \
@@ -7,7 +7,7 @@ python -m train.adversarial_training_clip_up_aug \
 --output_normalize False \
 --steps 10000 \
 --warmup 1400 \
---batch_size 64 \
+--batch_size 32 \
 --loss l2 \
 --opt adamw \
 --lr 1e-5 \
@@ -18,7 +18,7 @@ python -m train.adversarial_training_clip_up_aug \
 --eps 4 \
 --iterations_adv 10 \
 --stepsize_adv 1 \
---wandb True \
---output_dir /c/CodesSpring24/RobustVLM/cocoadv \
---experiment_name SimCLIP4 \
+--wandb False \
+--output_dir /path/to/out/dir \
+--experiment_name FARE4 \
 --log_freq 10 \

@@ -9,7 +9,7 @@ python -m train.adversarial_training_clip_up \
 --warmup 1400 \
 --batch_size 64 \
 --loss l2 \
---opt sgd \
+--opt adamw \
 --lr 1e-3 \
 --wd 1e-5 \
 --attack pgd \
