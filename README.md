@@ -206,7 +206,7 @@ For Flamingo run
 
 ## Results
 
-### Clean Evaluation
+- ### Clean Evaluation
 
 <table>
     <thead>
@@ -221,7 +221,7 @@ For Flamingo run
     </thead>
     <tbody>
         <tr>
-            <td rowspan="6">Open Flamingo</td>
+            <td rowspan="7">Open Flamingo</td>
             <td>Sim-CLIP-2</td>
             <td>85.6</td>
             <td>56.3</td>
@@ -264,7 +264,14 @@ For Flamingo run
             <td>31.0</td>
         </tr>
         <tr>
-            <td rowspan="6">LLaVA 1.5</td>
+            <td>CLIP</td>
+            <td>60.5</td>
+            <td>41.7</td>
+            <td>18.0</td>
+            <td>28.2</td>
+        </tr>
+        <tr>
+            <td rowspan="7">LLaVA 1.5</td>
             <td>Sim-CLIP-2</td>
             <td>109.1</td>
             <td>66.3</td>
@@ -306,10 +313,17 @@ For Flamingo run
             <td>39.4</td>
             <td>50.0</td>
         </tr>
+        <tr>
+            <td>CLIP</td>
+            <td>75.2</td>
+            <td>50.3</td>
+            <td>37.5</td>
+            <td>48.1</td>
+        </tr>
     </tbody>
 </table>
 
-### Evaluation on
+- ### Adversarial evaluation at $\epsilon$ = 4/255 radii
 
 <table>
     <thead>
@@ -324,7 +338,7 @@ For Flamingo run
     </thead>
     <tbody>
         <tr>
-            <td rowspan="6">Open Flamingo</td>
+            <td rowspan="7">Open Flamingo</td>
             <td>Sim-CLIP-2</td>
             <td>58.4</td>
             <td>35.1</td>
@@ -367,7 +381,14 @@ For Flamingo run
             <td>20.5</td>
         </tr>
         <tr>
-            <td rowspan="6">LLaVA 1.5</td>
+            <td>CLIP</td>
+            <td>5.6</td>
+            <td>3.8</td>
+            <td>1.8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td rowspan="7">LLaVA 1.5</td>
             <td>Sim-CLIP-2</td>
             <td>69.4</td>
             <td>42.3</td>
@@ -408,6 +429,13 @@ For Flamingo run
             <td>39.4</td>
             <td>28.4</td>
             <td>27.2</td>
+        </tr>
+        <tr>
+            <td>CLIP</td>
+            <td>13.5</td>
+            <td>10.0</td>
+            <td>3.2</td>
+            <td>0.0</td>
         </tr>
     </tbody>
 </table>
