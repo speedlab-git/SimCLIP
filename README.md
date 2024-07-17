@@ -114,20 +114,24 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 | -------------------- | ------ | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | CLIP                 | Clean  | OpenAI                                                       | -                                                                                                           |
 | Sim-CLIP<sup>4</sup> | Robust | Our Method                                                   | [Download Sim-CLIP<sup>4</sup>](https://huggingface.co/hossainzarif19/SimCLIP/blob/main/simclip4.pt)        |
-| Sim-CLIP<sup>2</sup> | Robust | Our Method                                                   | [Download Sim-CLIP<sup>2</sup>](https://example.com/simclip2)                                               |
+| Sim-CLIP<sup>2</sup> | Robust | Our Method                                                   | [Download Sim-CLIP<sup>2</sup>](https://huggingface.co/hossainzarif19/SimCLIP/blob/main/simclip2.pt)        |
 | FARE<sup>4</sup>     | Robust | [Schlarmann et al. (2024)](https://arxiv.org/pdf/2402.12336) | [Download FARE<sup>4</sup>](https://huggingface.co/collections/chs20/robust-clip-65d913e552eca001fdc41978)  |
 | FARE<sup>2</sup>     | Robust | [Schlarmann et al. (2024)](https://arxiv.org/pdf/2402.12336) | [Download FARE<sup>2</sup>](https://huggingface.co/collections/chs20/robust-clip-65d913e552eca001fdc41978)  |
 | TeCoA<sup>4</sup>    | Robust | [Mao et al. (2023)](https://arxiv.org/abs/2212.07016)        | [Download TeCoA<sup>4</sup>](https://huggingface.co/collections/chs20/robust-clip-65d913e552eca001fdc41978) |
 | TeCoA<sup>2</sup>    | Robust | [Mao et al. (2023)](https://arxiv.org/abs/2212.07016)        | [Download TeCoA<sup>2</sup>](https://huggingface.co/collections/chs20/robust-clip-65d913e552eca001fdc41978) |
 
+## Usage
+
+To use these models, you can load them using the provided code. For example, to load the Sim-CLIP<sup>4</sup> model, you can use the following code snippet:
+
 ```
 import torch
-from open_clip import create_model_and_transforms
-model, _, image_processor = create_model_and_transforms(
-            'ViT-L-14', pretrained='openai', device='cpu'
+model, _, image_processor = open_clip.create_model_and_transforms(
+            'ViT-L-14', pretrained='openai', device='gpu'
         )
-checkpoint = torch.load('/path/to/fare_eps_2.pt', map_location=torch.device('cpu'))
-model.visual.load_state_dict(checkpoint)
+
+checkpoint = torch.load('/path/to/simclip4.pt', map_location=torch.device('gpu'))
+model.vision_encoder.load_state_dict(checkpoint)
 ```
 
 ## Evaluation
