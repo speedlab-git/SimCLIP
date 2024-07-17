@@ -12,6 +12,7 @@
 - [Adversarial Training](#adversarial-training)
 - [Models](#models)
 - [Evaluation](#evaluation)
+- [Acknowledgement](#acknowledgement)
 
 ## Overview
 
