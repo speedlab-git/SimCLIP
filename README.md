@@ -198,3 +198,104 @@ For Flamingo run
 ./bash/of_eval_9B_okvqa.sh
 
 ```
+
+<table>
+    <thead>
+        <tr>
+            <th>Vision Encoder</th>
+            <th>VLM</th>
+            <th>COCO</th>
+            <th>Flickr30k</th>
+            <th>VizWiz</th>
+            <th>OKVQA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="6">Sim-CLIP-2</td>
+            <td rowspan="6">Open Flamingo</td>
+            <td>85.6</td>
+            <td>56.3</td>
+            <td>21.8</td>
+            <td>35.1</td>
+        </tr>
+        <tr>
+            <td>FARE-2</td>
+            <td>84.3</td>
+            <td>53.1</td>
+            <td>22.1</td>
+            <td>34.5</td>
+        </tr>
+        <tr>
+            <td>TECOA-2</td>
+            <td>74.5</td>
+            <td>48.2</td>
+            <td>22.3</td>
+            <td>33.6</td>
+        </tr>
+        <tr>
+            <td>Sim-CLIP-4</td>
+            <td>81.6</td>
+            <td>54.5</td>
+            <td>20.0</td>
+            <td>32.0</td>
+        </tr>
+        <tr>
+            <td>FARE-4</td>
+            <td>81.4</td>
+            <td>51.8</td>
+            <td>16.4</td>
+            <td>31.8</td>
+        </tr>
+        <tr>
+            <td>TECOA-4</td>
+            <td>71.0</td>
+            <td>45.6</td>
+            <td>19.3</td>
+            <td>31.0</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Sim-CLIP-2</td>
+            <td rowspan="6">LLaVA 1.5</td>
+            <td>109.1</td>
+            <td>66.3</td>
+            <td>45.8</td>
+            <td>54.5</td>
+        </tr>
+        <tr>
+            <td>FARE-2</td>
+            <td>108.1</td>
+            <td>65.1</td>
+            <td>43.8</td>
+            <td>54.1</td>
+        </tr>
+        <tr>
+            <td>TECOA-2</td>
+            <td>85.3</td>
+            <td>60.3</td>
+            <td>41.6</td>
+            <td>55.3</td>
+        </tr>
+        <tr>
+            <td>Sim-CLIP-4</td>
+            <td>103.6</td>
+            <td>65.0</td>
+            <td>41.3</td>
+            <td>54.6</td>
+        </tr>
+        <tr>
+            <td>FARE-4</td>
+            <td>105.1</td>
+            <td>64.0</td>
+            <td>41.7</td>
+            <td>54.5</td>
+        </tr>
+        <tr>
+            <td>TECOA-4</td>
+            <td>79.1</td>
+            <td>57.7</td>
+            <td>39.4</td>
+            <td>50.0</td>
+        </tr>
+    </tbody>
+</table>
