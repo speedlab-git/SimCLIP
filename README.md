@@ -98,9 +98,9 @@ python -m train.adversarial_training_clip --clip_model_name ViT-L-14 --pretraine
 python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss ce --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss ce --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir "output directory" --experiment_name TeCOA4 --log_freq 10
 ```
 
-```
+````
 ./bash/training/tecoa_train.sh
-```
+```ß
 
 ### **Note:**
 
@@ -108,18 +108,32 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 - We recommend a dual GPU setup with a total of 32 GB VRAM. If you are facing any issues with the GPU running out of memory, please reduce the `batch size`
 - Modify the `output_dir` parameter to specify the directory to save the model checkpoints
 
+## Models
+
+| Model Name           | Type   | Proposed By            | Download Link                                                 |
+| -------------------- | ------ | ---------------------- | ------------------------------------------------------------- |
+| CLIP                 | Clean  | OpenAI                 | -                                                             |
+| Sim-CLIP<sup>4</sup> | Robust | Our Method             | [Download Sim-CLIP<sup>4</sup>](https://example.com/simclip4) |
+| Sim-CLIP<sup>2</sup> | Robust | Our Method             | [Download Sim-CLIP<sup>2</sup>](https://example.com/simclip2) |
+| FARE<sup>4</sup>     | Robust | Schlarmann et al. 2024 | [Download FARE<sup>4</sup>](https://example.com/fare4)        |
+| FARE<sup>2</sup>     | Robust | Schlarmann et al. 2024 | [Download FARE<sup>2</sup>](https://example.com/fare2)        |
+| TeCoA<sup>4</sup>    | Robust | Mao et al. (2023)      | [Download TeCoA<sup>4</sup>](https://example.com/tecoa4)      |
+| TeCoA<sup>2</sup>    | Robust | Mao et al. (2023)      | [Download TeCoA<sup>2</sup>](https://example.com/tecoa2)      |
+
 ## Evaluation
 
-## Zero-shot Classification
+### Zero-shot Classification
 
 Acquire the classification dataset by visiting the Huggingface CLIP_benchmark repository at [Huggingface CLIP_benchmark](https://huggingface.co/clip-benchmark). Configure the models for evaluation in `CLIP_benchmark/benchmark/models.txt` and specify the datasets in `CLIP_benchmark/benchmark/datasets.txt`. Then execute
 
-```
+````
+
 cd CLIP_benchmark
 ./bash/run_benchmark_adv.sh
+
 ```
 
-## Down-stream tasks evaluation
+### Down-stream tasks evaluation
 
 Before proceeding with Down-stream tasks evaluations, download validation annotations set from [Huggingface openflamingo repository](https://huggingface.co/datasets/openflamingo/eval_benchmark/tree/main)
 
@@ -130,11 +144,15 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
   To evaluate the OpenFlamingo 9B model, first download the model from [here](https://huggingface.co/openflamingo/OpenFlamingo-9B-vitl-mpt7b/tree/main). Then, supply the downloaded annotation set and flamingo checkpoint paths in `/bash/of_eval_9B_coco.sh` . Set the `--vision_encoder_pretrained` parameter to `openai` or provide the path to a fine-tuned CLIP model checkpoint (e.g., Sim-CLIP). Finally, run the evaluation script.
 
 ```
+
 ./bash/of_eval_9B_coco.sh
+
 ```
 
 ```
+
 ./bash/of_eval_9B_Flickr.sh
+
 ```
 
 - LLAVA
@@ -142,7 +160,9 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
   The LLaVA model checkpoint will be automatically downloaded from repository. Update the dataset path with the location of your downloaded dataset and then execute the following command:
 
 ```
+
 ./bash/llava_eval_coco.sh
+
 ```
 
 ### Visual Question Answering Tasks
@@ -152,11 +172,17 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 For LLAVA run
 
 ```
+
 ./bash/llava_eval_okvqa.sh
+
 ```
 
 For Flamingo run
 
 ```
+
 ./bash/of_eval_9B_okvqa.sh
+
+```
+
 ```
