@@ -1,7 +1,5 @@
 # Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust Visual Language Models
 
-## Abstract
-
 <!-- ![system architecture](./utils/arch.png) -->
 
 <p align="justify">Vision-language models (VLMs) have achieved remarkable performance on multimodal tasks but remain vulnerable to adversarial attacks targeting the vision component. We propose Sim-CLIP, an unsupervised adversarial fine-tuning method that enhances the robustness of the widely-used CLIP vision encoder against such attacks. By employing a Siamese architecture with cosine similarity loss, Sim-CLIP learns semantically meaningful and attack-resilient visual representations without requiring large batch sizes or momentum encoders. We demonstrate that VLMs enhanced with Sim-CLIP's fine-tuned CLIP encoder exhibit significantly enhanced robustness against adversarial attacks, while maintaining high clean accuracy across diverse downstream tasks. Notably, our approach does not require any additional training or fine-tuning of the VLM itself. Simply replacing the original vision encoder with our fine-tuned encoder is sufficient to provide robustness against adversarial attacks. This work underscores the criticality of reinforcing foundational models like CLIP to safeguard the reliability of downstream VLM applications.</p>
@@ -19,6 +17,9 @@
 
 <p align="center">
   <img src="./utils/arch.png" width="950" alt="accessibility text">
+</p>
+<p align="justify">
+Adversarial attacks on vision-language models (VLMs) pose a significant challenge as they can compromise the model's ability to accurately interpret and respond to visual inputs. Previous approaches such as FARE have attempted to enhance the robustness of VLMs by minimizing the discrepancy between the embeddings of clean and adversarially perturbed images using ℓ2 loss. However, this method struggles with high-dimensional data leading to inefficiencies and a failure to capture the full semantic meaning of image features. To address these limitations we introduce Sim-CLIP, an unsupervised adversarial fine-tuning approach for the CLIP vision encoder that leverages a Siamese architecture. By generating perturbed views of input images and employing a cosine similarity loss our method encourages the model to learn features invariant to adversarial perturbations. Additionally, we incorporate a stop-gradient mechanism to prevent loss collapse ensuring stable and effective training. This results in a model that not only exhibits improved robustness against adversarial attacks but also retains the semantic richness of image features outperforming previous methods in maintaining meaningful patterns essential for downstream tasks.
 </p>
 
 ## Installation
@@ -73,7 +74,7 @@ For image captioning tasks, we use the COCO and Flickr30k datasets, which are wi
 
 ## Adversarial training
 
-In this repository, we provide scripts for running adversarial training with `FARE` and `TeCoA` alongside our proposed method, Sim-CLIP. We have provided bash scripts for easier execution of these training methods. Each script is tailored to run the respective training method with the necessary configurations. Navigate to the `bash` folder and execute the desired script to start the training process or use given commands in your terminal
+In this repository, we provide scripts for running adversarial training with `FARE` and `TeCoA` alongside our proposed method, `Sim-CLIP`. We have provided bash scripts for easier execution of these training methods. Each script is tailored to run the respective training method with the necessary configurations. 
 
 ### 1. Sim-CLIP<sup>4</sup>
 
@@ -136,7 +137,7 @@ model, _, image_processor = open_clip.create_model_and_transforms(
             'ViT-L-14', pretrained='openai', device='gpu'
         )
 
-checkpoint = torch.load('/path/to/simclip4.pt', map_location=torch.device('gpu'))
+checkpoint = torch.load('simclip4.pt path', map_location=torch.device('gpu'))
 model.vision_encoder.load_state_dict(checkpoint)
 ```
 
