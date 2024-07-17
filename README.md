@@ -147,9 +147,15 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 
 ### Visual Question Answering Tasks
 
+- For VQA, provide the path of the respective VQA dataset in the script and then execute the following commands:
+
+For LLAVA run
+
 ```
 ./bash/llava_eval_okvqa.sh
 ```
+
+For Flamingo run
 
 ```
 ./bash/of_eval_9B_okvqa.sh
