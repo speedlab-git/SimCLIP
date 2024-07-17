@@ -126,6 +126,7 @@ To use these models, you can load them using the provided code. For example, to 
 
 ```
 import torch
+import open_clip
 model, _, image_processor = open_clip.create_model_and_transforms(
             'ViT-L-14', pretrained='openai', device='gpu'
         )
@@ -140,7 +141,7 @@ model.vision_encoder.load_state_dict(checkpoint)
 
 Acquire the classification dataset by visiting the Huggingface CLIP_benchmark repository at [Huggingface CLIP_benchmark](https://huggingface.co/clip-benchmark). Configure the models for evaluation in `CLIP_benchmark/benchmark/models.txt` and specify the datasets in `CLIP_benchmark/benchmark/datasets.txt`. Then execute
 
-````
+```
 
 cd CLIP_benchmark
 ./bash/run_benchmark_adv.sh
@@ -164,7 +165,6 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 ```
 
 ```
-
 ./bash/of_eval_9B_Flickr.sh
 
 ```
@@ -198,6 +198,3 @@ For Flamingo run
 ./bash/of_eval_9B_okvqa.sh
 
 ```
-
-```
-````
