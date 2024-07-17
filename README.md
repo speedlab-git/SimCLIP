@@ -187,7 +187,7 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 
 ### Visual Question Answering Tasks
 
-- For VQA, provide the path of the respective VQA dataset in the script and then execute the following commands:
+- For VQA, provide the path of OKVQA dataset in the script and then execute the following commands:
 
 For LLAVA run
 
@@ -474,3 +474,16 @@ In adversarial scenarios, where models are evaluated at an epsilon value of 4/25
         </tr>
     </tbody>
 </table>
+
+
+## Acknowledgements
+
+We extend our gratitude to the developers and contributors of the following repositories for their invaluable resources and tools that have significantly aided in the development and evaluation of our project:
+
+- [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)
+- [LLaVA](https://github.com/haotian-liu/LLaVA)
+- [CLIP Benchmark](https://github.com/LAION-AI/CLIP_benchmark)
+- [AutoAttack](https://github.com/fra31/auto-attack)
+- [RobustVLM](https://github.com/chs20/RobustVLM)
+
+
