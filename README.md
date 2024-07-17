@@ -75,7 +75,7 @@ For image captioning tasks, we use the COCO and Flickr30k datasets, which are wi
 
 ## Adversarial training
 
-In this repository, we provide scripts for running adversarial training with `FARE` and `TeCoA` alongside our proposed method, `Sim-CLIP`. We have provided bash scripts for easier execution of these training methods. Each script is tailored to run the respective training method with the necessary configurations. 
+In this repository, we provide scripts for running adversarial training with `FARE` and `TeCoA` alongside our proposed method, `Sim-CLIP`. We have provided bash scripts for easier execution of these training methods. Each script is tailored to run the respective training method with the necessary configurations.
 
 ### 1. Sim-CLIP<sup>4</sup>
 
@@ -176,13 +176,13 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 
 ```
 
-- LLAVA
+- LLaVA
 
   The LLaVA model checkpoint will be automatically downloaded from repository. Update the dataset path with the location of your downloaded dataset and then execute the following command:
 
 ```
 
-./bash/llava_eval_coco.sh
+./bash/LLaVA_eval_coco.sh
 
 ```
 
@@ -190,11 +190,11 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 
 - For VQA, provide the path of OKVQA dataset in the script and then execute the following commands:
 
-For LLAVA run
+For LLaVA run
 
 ```
 
-./bash/llava_eval_okvqa.sh
+./bash/LLaVA_eval_okvqa.sh
 
 ```
 
@@ -208,8 +208,7 @@ For Flamingo run
 
 ## Targeted attacks
 
-To perform targeted attacks with the LLAVA model on the COCO or Flickr30k dataset, please run these steps:
-
+To perform targeted attacks with the LLaVA model on the COCO or Flickr30k dataset, please run these steps:
 
 ```
 ./bash/eval_targeted.sh
@@ -220,16 +219,11 @@ To perform targeted attacks with the LLAVA model on the COCO or Flickr30k datase
 For targeted attacks on custom images, update `vlm_eval/run_evaluation_qualitative.py` with your images and captions, then execute:
 
 ```
-python -m vlm_eval.run_evaluation_qualitative --precision float32 --attack apgd --eps 2 --steps 10000 --vlm_model_name llava --vision_encoder_pretrained openai --verbose
+python -m vlm_eval.run_evaluation_qualitative --precision float32 --attack apgd --eps 2 --steps 10000 --vlm_model_name LLaVA --vision_encoder_pretrained openai --verbose
 ```
-**Note**: 
+
+**Note**:
 To increase the strength of the attack, modify the `--attack` parameter with higher steps in the bash script. A higher attack step size results in a stronger attack.
-
-
-
-
-
-
 
 ## Results
 
@@ -239,10 +233,7 @@ From the results, Sim-CLIP models, particularly Sim-CLIP<sup>4</sup>, consistent
 In adversarial scenarios, where models are evaluated at an epsilon value of 4/255, Sim-CLIP models demonstrate superior resilience, maintaining higher performance metrics compared to other models. This robustness is crucial for practical applications where models might encounter manipulated or adversarially altered inputs.
 </p>
 
-
 - ### Clean Evaluation
-
-
 
 <table>
     <thead>
@@ -476,7 +467,6 @@ In adversarial scenarios, where models are evaluated at an epsilon value of 4/25
     </tbody>
 </table>
 
-
 ## Acknowledgements
 
 We extend our gratitude to the developers and contributors of the following repositories for their invaluable resources and tools that have significantly aided in the development and evaluation of our project:
@@ -486,5 +476,3 @@ We extend our gratitude to the developers and contributors of the following repo
 - [CLIP Benchmark](https://github.com/LAION-AI/CLIP_benchmark)
 - [AutoAttack](https://github.com/fra31/auto-attack)
 - [RobustVLM](https://github.com/chs20/RobustVLM)
-
-
