@@ -98,7 +98,7 @@ python -m train.adversarial_training_clip --clip_model_name ViT-L-14 --pretraine
 python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretrained openai --dataset imagenet --imagenet_root /c/CodesSpring24/Data/imagenet-object-localization-challenge/ILSVRC/Data/CLS-LOC --template std --output_normalize False --steps 10000 --warmup 1400 --batch_size 64 --loss ce --opt sgd --lr 1e-3 --wd 1e-5 --attack pgd --inner_loss ce --norm linf --eps 4 --iterations_adv 10 --stepsize_adv 1 --wandb True --output_dir "output directory" --experiment_name TeCOA4 --log_freq 10
 ```
 
-````
+```
 ./bash/training/tecoa_train.sh
 ```
 
@@ -119,7 +119,6 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 | FARE<sup>2</sup>     | Robust | Schlarmann et al. (2024) | [Download FARE<sup>2</sup>](https://example.com/fare2)        |
 | TeCoA<sup>4</sup>    | Robust | Mao et al. (2023)        | [Download TeCoA<sup>4</sup>](https://example.com/tecoa4)      |
 | TeCoA<sup>2</sup>    | Robust | Mao et al. (2023)        | [Download TeCoA<sup>2</sup>](https://example.com/tecoa2)      |
-
 
 ## Evaluation
 
@@ -187,3 +186,4 @@ For Flamingo run
 ```
 
 ```
+````
