@@ -100,7 +100,7 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 
 ````
 ./bash/training/tecoa_train.sh
-```ß
+```
 
 ### **Note:**
 
@@ -110,15 +110,16 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 
 ## Models
 
-| Model Name           | Type   | Proposed By            | Download Link                                                 |
-| -------------------- | ------ | ---------------------- | ------------------------------------------------------------- |
-| CLIP                 | Clean  | OpenAI                 | -                                                             |
-| Sim-CLIP<sup>4</sup> | Robust | Our Method             | [Download Sim-CLIP<sup>4</sup>](https://example.com/simclip4) |
-| Sim-CLIP<sup>2</sup> | Robust | Our Method             | [Download Sim-CLIP<sup>2</sup>](https://example.com/simclip2) |
-| FARE<sup>4</sup>     | Robust | Schlarmann et al. 2024 | [Download FARE<sup>4</sup>](https://example.com/fare4)        |
-| FARE<sup>2</sup>     | Robust | Schlarmann et al. 2024 | [Download FARE<sup>2</sup>](https://example.com/fare2)        |
-| TeCoA<sup>4</sup>    | Robust | Mao et al. (2023)      | [Download TeCoA<sup>4</sup>](https://example.com/tecoa4)      |
-| TeCoA<sup>2</sup>    | Robust | Mao et al. (2023)      | [Download TeCoA<sup>2</sup>](https://example.com/tecoa2)      |
+| Model Name           | Type   | Proposed By              | Download Link                                                 |
+| -------------------- | ------ | ------------------------ | ------------------------------------------------------------- |
+| CLIP                 | Clean  | OpenAI                   | -                                                             |
+| Sim-CLIP<sup>4</sup> | Robust | Our Method               | [Download Sim-CLIP<sup>4</sup>](https://example.com/simclip4) |
+| Sim-CLIP<sup>2</sup> | Robust | Our Method               | [Download Sim-CLIP<sup>2</sup>](https://example.com/simclip2) |
+| FARE<sup>4</sup>     | Robust | Schlarmann et al. (2024) | [Download FARE<sup>4</sup>](https://example.com/fare4)        |
+| FARE<sup>2</sup>     | Robust | Schlarmann et al. (2024) | [Download FARE<sup>2</sup>](https://example.com/fare2)        |
+| TeCoA<sup>4</sup>    | Robust | Mao et al. (2023)        | [Download TeCoA<sup>4</sup>](https://example.com/tecoa4)      |
+| TeCoA<sup>2</sup>    | Robust | Mao et al. (2023)        | [Download TeCoA<sup>2</sup>](https://example.com/tecoa2)      |
+
 
 ## Evaluation
 
