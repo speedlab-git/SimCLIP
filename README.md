@@ -3,18 +3,23 @@
 ## Abstract
 
 <!-- ![system architecture](./utils/arch.png) -->
-<p align="center">
-  <img src="./utils/arch.png" width="950" alt="accessibility text">
-</p>
+
 <p align="justify">Vision-language models (VLMs) have achieved remarkable performance on multimodal tasks but remain vulnerable to adversarial attacks targeting the vision component. We propose Sim-CLIP, an unsupervised adversarial fine-tuning method that enhances the robustness of the widely-used CLIP vision encoder against such attacks. By employing a Siamese architecture with cosine similarity loss, Sim-CLIP learns semantically meaningful and attack-resilient visual representations without requiring large batch sizes or momentum encoders. We demonstrate that VLMs enhanced with Sim-CLIP's fine-tuned CLIP encoder exhibit significantly enhanced robustness against adversarial attacks, while maintaining high clean accuracy across diverse downstream tasks. Notably, our approach does not require any additional training or fine-tuning of the VLM itself. Simply replacing the original vision encoder with our fine-tuned encoder is sufficient to provide robustness against adversarial attacks. This work underscores the criticality of reinforcing foundational models like CLIP to safeguard the reliability of downstream VLM applications.</p>
 
 ## Contents
 
+- [Overview](#overview)
 - [Installation](#installation)
 - [Dataset](#dataset)
 - [Adversarial Training](#adversarial-training)
 - [Models](#models)
 - [Evaluation](#evaluation)
+
+## Overview
+
+<p align="center">
+  <img src="./utils/arch.png" width="950" alt="accessibility text">
+</p>
 
 ## Installation
 
@@ -199,11 +204,15 @@ For Flamingo run
 
 ```
 
+## Results
+
+### Clean Evaluation
+
 <table>
     <thead>
         <tr>
-            <th>Vision Encoder</th>
             <th>VLM</th>
+            <th>Vision Encoder</th>
             <th>COCO</th>
             <th>Flickr30k</th>
             <th>VizWiz</th>
@@ -212,8 +221,8 @@ For Flamingo run
     </thead>
     <tbody>
         <tr>
-            <td rowspan="6">Sim-CLIP-2</td>
             <td rowspan="6">Open Flamingo</td>
+            <td>Sim-CLIP-2</td>
             <td>85.6</td>
             <td>56.3</td>
             <td>21.8</td>
@@ -255,8 +264,8 @@ For Flamingo run
             <td>31.0</td>
         </tr>
         <tr>
-            <td rowspan="6">Sim-CLIP-2</td>
             <td rowspan="6">LLaVA 1.5</td>
+            <td>Sim-CLIP-2</td>
             <td>109.1</td>
             <td>66.3</td>
             <td>45.8</td>
@@ -296,6 +305,109 @@ For Flamingo run
             <td>57.7</td>
             <td>39.4</td>
             <td>50.0</td>
+        </tr>
+    </tbody>
+</table>
+
+### Evaluation on
+
+<table>
+    <thead>
+        <tr>
+            <th>VLM</th>
+            <th>Vision Encoder</th>
+            <th>COCO</th>
+            <th>Flickr30k</th>
+            <th>VizWiz</th>
+            <th>OKVQA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="6">Open Flamingo</td>
+            <td>Sim-CLIP-2</td>
+            <td>58.4</td>
+            <td>35.1</td>
+            <td>13.6</td>
+            <td>19.7</td>
+        </tr>
+        <tr>
+            <td>FARE-2</td>
+            <td>53.5</td>
+            <td>34.3</td>
+            <td>12.3</td>
+            <td>17.1</td>
+        </tr>
+        <tr>
+            <td>TECOA-2</td>
+            <td>40.3</td>
+            <td>27.4</td>
+            <td>10.6</td>
+            <td>15.3</td>
+        </tr>
+        <tr>
+            <td>Sim-CLIP-4</td>
+            <td>60.5</td>
+            <td>39.2</td>
+            <td>15.7</td>
+            <td>22.0</td>
+        </tr>
+        <tr>
+            <td>FARE-4</td>
+            <td>56.1</td>
+            <td>37.6</td>
+            <td>13.7</td>
+            <td>19.2</td>
+        </tr>
+        <tr>
+            <td>TECOA-4</td>
+            <td>50.3</td>
+            <td>32.9</td>
+            <td>14.7</td>
+            <td>20.5</td>
+        </tr>
+        <tr>
+            <td rowspan="6">LLaVA 1.5</td>
+            <td>Sim-CLIP-2</td>
+            <td>69.4</td>
+            <td>42.3</td>
+            <td>33.4</td>
+            <td>33.9</td>
+        </tr>
+        <tr>
+            <td>FARE-2</td>
+            <td>68.3</td>
+            <td>41.6</td>
+            <td>30.1</td>
+            <td>31.8</td>
+        </tr>
+        <tr>
+            <td>TECOA-2</td>
+            <td>61.1</td>
+            <td>36.1</td>
+            <td>25.3</td>
+            <td>24.1</td>
+        </tr>
+        <tr>
+            <td>Sim-CLIP-4</td>
+            <td>72.9</td>
+            <td>46.3</td>
+            <td>35.2</td>
+            <td>36.2</td>
+        </tr>
+        <tr>
+            <td>FARE-4</td>
+            <td>71.7</td>
+            <td>43.6</td>
+            <td>33.7</td>
+            <td>34.0</td>
+        </tr>
+        <tr>
+            <td>TECOA-4</td>
+            <td>65.5</td>
+            <td>39.4</td>
+            <td>28.4</td>
+            <td>27.2</td>
         </tr>
     </tbody>
 </table>
