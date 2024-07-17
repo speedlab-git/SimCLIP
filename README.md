@@ -153,7 +153,7 @@ cd CLIP_benchmark
 
 ```
 
-### Down-stream tasks evaluation
+### Down-stream tasks evaluation (Untargeted Attacks)
 
 Before proceeding with Down-stream tasks evaluations, download validation annotations set from [Huggingface openflamingo repository](https://huggingface.co/datasets/openflamingo/eval_benchmark/tree/main)
 
@@ -204,9 +204,43 @@ For Flamingo run
 
 ```
 
+## Targeted attacks
+
+To perform targeted attacks with the LLAVA model on the COCO or Flickr30k dataset, please run these steps:
+
+
+```
+./bash/eval_targeted.sh
+```
+
+**Note**: Default target strings can be updated in `run_evaluation.py`
+
+For targeted attacks on custom images, update `vlm_eval/run_evaluation_qualitative.py` with your images and captions, then execute:
+
+```
+python -m vlm_eval.run_evaluation_qualitative --precision float32 --attack apgd --eps 2 --steps 10000 --vlm_model_name llava --vision_encoder_pretrained openai --verbose
+```
+**Note**: 
+To increase the strength of the attack, modify the `--attack` parameter with higher steps in the bash script. A higher attack step size results in a stronger attack.
+
+
+
+
+
+
+
 ## Results
 
+<p align="justify">
+The tables provided illustrate the robust performance of various vision-language models (VLMs) using different versions of the CLIP model across two main tasks: image captioning and visual question answering (VQA). For the image captioning tasks on COCO and Flickr30k datasets, we evaluate the models using the CIDEr score, which quantifies the consensus between a candidate caption and reference captions. Higher CIDEr scores indicate a better capture of semantic meaning and relevance in the generated captions. For VQA tasks on VizWiz and OKVQA datasets, we report accuracy to measure the model's ability to correctly interpret and answer questions based on visual content.
+From the results, Sim-CLIP models, particularly Sim-CLIP<sup>4</sup>, consistently outperform other robust models like FARE and TECOA across most datasets in both clean and adversarial settings. This suggests that Sim-CLIP's adversarial fine-tuning approach not only enhances robustness against adversarial attacks but also preserves or even improves the model's ability to understand and generate semantically meaningful responses in complex multimodal tasks.
+In adversarial scenarios, where models are evaluated at an epsilon value of 4/255, Sim-CLIP models demonstrate superior resilience, maintaining higher performance metrics compared to other models. This robustness is crucial for practical applications where models might encounter manipulated or adversarially altered inputs.
+</p>
+
+
 - ### Clean Evaluation
+
+
 
 <table>
     <thead>
