@@ -125,12 +125,31 @@ Before proceeding with Down-stream tasks evaluations, download validation annota
 
 ### Captioning Tasks
 
--OpenFlamingo
-
-Download the OpenFlamingo 9B [model](https://huggingface.co/openflamingo/OpenFlamingo-9B-vitl-mpt7b/tree/main), supply paths in /bash/of_eval_9B_coco.sh. Set `--vision_encoder_pretrained` to `openai` or supply path to fine-tuned CLIP model checkpoint (e.g., Sim-CLIP). Provide path to downloaded annotation set and run
+- OpenFlamingo
+<p align="justify">
+To evaluate the OpenFlamingo 9B model, first download the model from [here](https://huggingface.co/openflamingo/OpenFlamingo-9B-vitl-mpt7b/tree/main). Then, supply the downloaded annotation set and flamingo checkpoint paths in `/bash/of_eval_9B_coco.sh`. Set the `--vision_encoder_pretrained` parameter to `openai` or provide the path to a fine-tuned CLIP model checkpoint (e.g., Sim-CLIP). Finally, run the evaluation script.
 
 ```
 ./bash/of_eval_9B_coco.sh
 ```
 
+```
+./bash/of_eval_9B_Flickr.sh
+```
+
+- LLAVA
+  The LLaVA model checkpoint will be automatically downloaded from repository. Update the dataset path with the location of your downloaded dataset and then execute the following command:
+
+```
+./bash/llava_eval_coco.sh
+```
+
 ### Visual Question Answering Tasks
+
+```
+./bash/llava_eval_okvqa.sh
+```
+
+```
+./bash/of_eval_9B_okvqa.sh
+```
