@@ -17,7 +17,7 @@
 ## Overview
 
 <p align="center">
-  <img src="./utils/arch.png" width="950" alt="accessibility text">
+  <img src="./utils/arch_robust.png" width="950" alt="accessibility text">
 </p>
 <p align="justify">
 Adversarial attacks on vision-language models (VLMs) pose a significant challenge as they can compromise the model's ability to accurately interpret and respond to visual inputs. Previous approaches such as FARE have attempted to enhance the robustness of VLMs by minimizing the discrepancy between the embeddings of clean and adversarially perturbed images using ℓ<sub>2</sub> loss. However, this method struggles with high-dimensional data leading to inefficiencies and a failure to capture the full semantic meaning of image features. To address these limitations we introduce Sim-CLIP, an unsupervised adversarial fine-tuning approach for the CLIP vision encoder that leverages a Siamese architecture. By generating perturbed views of input images and employing a cosine similarity loss our method encourages the model to learn features invariant to adversarial perturbations. Additionally, we incorporate a stop-gradient mechanism to prevent loss collapse ensuring stable and effective training. This results in a model that not only exhibits improved robustness against adversarial attacks but also retains the semantic richness of image features outperforming previous methods in maintaining meaningful patterns essential for downstream tasks.
