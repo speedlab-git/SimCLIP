@@ -1,4 +1,4 @@
-# Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust Visual Language Models
+# Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust and Semantically-Rich Vision-Language Models
 
 <!-- ![system architecture](./utils/arch.png) -->
 
