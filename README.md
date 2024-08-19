@@ -108,6 +108,7 @@ python -m train.adversarial_training_clip_up --clip_model_name ViT-L-14 --pretra
 ```
 ./bash/training/tecoa_train.sh
 ```
+We utilize 2x A6000 GPU for our adversarial training and inference
 
 ### **Note:**
 
