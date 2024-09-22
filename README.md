@@ -1,7 +1,7 @@
 # Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust and Semantically-Rich Vision-Language Models
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2407.03386-red)](https://arxiv.org/abs/2407.03386) 
+[![arXiv](https://img.shields.io/badge/arXiv-2407.14971-red)](https://arxiv.org/abs/2407.14971) 
 ![Paper Status](https://img.shields.io/badge/Paper%20Status-In--Review-yellow)
 [![Code](https://img.shields.io/badge/Code-Repository-blue)](https://github.com/link_to_repository)
 
