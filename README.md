@@ -1,5 +1,10 @@
 # Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust and Semantically-Rich Vision-Language Models
 
+
+[![arXiv](https://img.shields.io/badge/arXiv-2407.03386-red)](https://arxiv.org/abs/2407.03386) 
+![Paper Status](https://img.shields.io/badge/Paper%20Status-In--Review-yellow)
+[![Code](https://img.shields.io/badge/Code-Repository-blue)](https://github.com/link_to_repository)
+
 <!-- ![system architecture](./utils/arch.png) -->
 
 <p align="justify">Vision-language models (VLMs) have achieved significant strides in recent years, particularly in multimodal tasks. However, VLMs remain susceptible to adversarial attacks, specially on their vision components. This paper introduces Sim-CLIP, an unsupervised adversarial fine-tuning method that enhances the robustness of the widely-used CLIP vision encoder, preserving fine-grained semantic details of visual representations even in unsusceptible adversarial situations. Sim-CLIP is built upon Siamese architecture to learn Interpretable and Meaningful visual representations. Through adversarial fine-tuning of the CLIP encoder, Sim-CLIP enhances resilience against adversarial attacks while capturing nuanced semantic details of perturbed images, distinguishing it from state-of-the-art CLIP models. Sim-CLIP achieves such robustness without requiring large batch sizes, which demand significant resources and can affect generalization, or additional momentum encoders, which add complexity and computational overhead. We present comprehensive performance benchmark of Sim-CLIP compared to state-of-the-art CLIP models across a wide range of datasets and various downstream VLM applications (e.g., image captioning, question-answering, zero-shot tasks). Our results expose the vulnerabilities of existing methods under unsusceptible adversarial conditions and demonstrate the superior robustness of Sim-CLIP while retaining nuanced details of the perturbed images.</p>
