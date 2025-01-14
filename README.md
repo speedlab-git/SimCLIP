@@ -1,9 +1,6 @@
 
 <h1 align="center">Sim-CLIP: Unsupervised Siamese Adversarial Fine-Tuning for Robust and Semantically-Rich Vision-Language Models</h1>
 
-<p align="center">
-  <b>Md Zarif Hossain</b> · <b>Ahmed Imteaj</b>
-</p>
 
 <p align="center">
 <a href="https://arxiv.org/abs/2407.14971"><img src="https://img.shields.io/badge/arXiv-2407.14971-red"></a>
